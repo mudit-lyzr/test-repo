@@ -64,7 +64,7 @@ export default function TaskTable({
             {filteredTasks.length === 0 ? (
               <tr>
                 <td colSpan={7} className="px-4 py-6 text-center text-gray-500">
-                  No tasks found.
+                  No tasks found. add a task from above menu
                 </td>
               </tr>
             ) : (
