@@ -99,10 +99,11 @@ jobs:
               return;
             }
 
+            // Use a distinct name to avoid clashing with github-script's injected octokit
             const token = process.env.PAT_TOKEN;
-            const octokit = github.getOctokit(token);
+            const patOctokit = github.getOctokit(token);
 
-            await octokit.rest.pulls.update({
+            await patOctokit.rest.pulls.update({
               owner: process.env.OWNER,
               repo: process.env.REPO,
               pull_number: Number(process.env.PR_NUMBER),
